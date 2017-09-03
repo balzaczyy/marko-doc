@@ -1,0 +1,18 @@
+import getColors from './util/getColors'
+class {
+  onInput(input) {
+    var colors = input.colors || getColors();
+
+    this.state = {
+      selectedColor: colors[0],
+      colors
+    };
+  }
+
+  onColorSelected(color) {
+    this.state.selectedColor = color;
+  }
+}
+div
+    header color=state.selectedColor
+    footer colors=state.colors on-colorSelected('onColorSelected')
