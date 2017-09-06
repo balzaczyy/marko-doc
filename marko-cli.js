@@ -6,14 +6,14 @@ module.exports = function (markoCli) {
     const basename = path.basename(file);
     const testMatches = testRegExp.exec(basename);
 
-    console.log(basename)
     if (!testMatches) {
       // The file is not a test file
       return false;
     }
 
     const componentDirectory = path.dirname(file);
-    const componentName = path.basename(componentDirectory); // header
+    // Strip out the "-test.js" to get the component name
+    const componentName = path.basename(file).replace(/-test.js.*$/, '');
 
     // /components/header.marko
     const rendererPath = `${componentDirectory}/${componentName}.marko`;
