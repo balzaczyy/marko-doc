@@ -12,6 +12,7 @@
     "eslint": "^4.2.0",
     "eslint-config-prettier": "^2.3.0",
     "eslint-plugin-prettier": "^2.1.2",
+    "marko-cli": "1.0.19",
     "prettier": "^1.5.2"
   },
   "dependencies": {
@@ -24,7 +25,7 @@
     "build": "NODE_ENV=production marko-starter build",
     "serve-static": "NODE_ENV=production marko-starter serve-static",
     "lint": "eslint src/",
-    "test": "marko test",
+    "test": "marko test ./src/components/**/*-test.js",
     "prettier": "prettier src/**/*.{js,css,less} *.js --write"
   },
   "eslintConfig": {
